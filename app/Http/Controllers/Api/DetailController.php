@@ -10,7 +10,7 @@ class DetailController extends Controller
 {
     public function uploadAvatar(Request $request)
     {
-        if (!in_array($request->file('avatar')->extension(), ['png', 'jpg', 'gif']))
+        if (!in_array($request->file('avatar')->extension(), ['png', 'jpg', 'jpeg', 'gif']))
             return $this->response->errorBadRequest('目前只支持jpg, png, gif格式');
 
         $user = auth()->user();
@@ -29,19 +29,19 @@ class DetailController extends Controller
     {
         $request->validate([
             'name' => 'required|string',
-            'sex' => 'required|in:男,女,不明',
-            'dormitory' => 'string',
-            'room' => 'string',
-            'major' => 'string',
+            'sex' => 'required|string',
+            'dormitory' => 'string|nullable',
+            'room' => 'string|nullable',
+            'major' => 'string|nullable',
             'college_id' => 'integer',
-            'class' => 'string',
+            'class' => 'string|nullable',
             'birth' => 'required|date',
-            'origin' => 'string',
-            'politics' => 'string',
+            'origin' => 'string|nullable',
+            'politics' => 'string|nullable',
             'mobile' => 'required|string|size:11',
-            'shortMobile' => 'string',
-            'qq' => 'string',
-            'weibo' => 'string'
+            'shortMobile' => 'string|nullable',
+            'qq' => 'string|nullable',
+            'weibo' => 'string|nullable'
         ]);
 
         $detail = auth()->user()->detail;
