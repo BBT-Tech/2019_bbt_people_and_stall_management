@@ -41,7 +41,8 @@ class DetailController extends Controller
             'mobile' => 'required|string|size:11',
             'shortMobile' => 'string|nullable',
             'qq' => 'string|nullable',
-            'weibo' => 'string|nullable'
+            'weibo' => 'string|nullable',
+            'campus' => 'required|in:五山校区,大学城校区,国际校区'
         ]);
 
         $detail = auth()->user()->detail;
