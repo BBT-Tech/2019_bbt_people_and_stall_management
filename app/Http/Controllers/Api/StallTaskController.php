@@ -24,6 +24,7 @@ class StallTaskController extends Controller
         //验证
         $task = StallTask::create([
             'stall_id' => $request->stall_id,
+            'campus' => $request->campus,
             'location' => $request->location,
             'date' => $request->date,
             'number' => $request->number,
@@ -58,7 +59,7 @@ class StallTaskController extends Controller
     {
         //验证
         $task_id = $request->task_id;
-        $group_id=($request->group_id)?$request->group_id:6;
+        $group_id = ($request->group_id) ? $request->group_id : 6;
         $task = StallTask::findOrFail($task_id);
         if (!UserStallTask::where('stall_task_id', $task_id)->where('role', '<>', 1)->get()->isEmpty())
             return $this->response->errorBadRequest('人员已分配！');
@@ -81,20 +82,26 @@ class StallTaskController extends Controller
                 ['end', '>=', $task->start]
             ]);
         })->pluck('id')->toArray();
+        $campus = $task->campus;
         $users = User::with([
             'stallNumber',
         ])->where('id', '<>', $adminer->id)
-            ->where('group_id',$group_id)
+            ->where('group_id', $group_id)
             ->whereHas('stallNumber', function ($q) {
                 $q->where('verified', 1);
-            })->whereDoesntHave('schedules', function ($q) use ($week, $day, $task) {
+            })
+            ->whereHas('detail', function ($q) use ($campus) {
+                $q->where('campus', $campus);
+            })
+            ->whereDoesntHave('schedules', function ($q) use ($week, $day, $task) {
                 $q->where([
                     ['week', '=', $week],
                     ['day', '=', $day],
                     ['class', '>=', $task->start],
                     ['class', '<=', $task->end]
                 ]);
-            })->get()
+            })
+            ->get()
             ->shuffle()
             ->sortBy(function ($user, $key) use ($same_time_tasks_users_ids, $same_stall_users_ids) {
                 if (in_array($user->id, $same_time_tasks_users_ids)) return 200000 + $user->stallNumber->number;
