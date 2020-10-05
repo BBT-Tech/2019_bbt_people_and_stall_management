@@ -8,15 +8,16 @@ use Illuminate\Support\Facades\Storage;
 
 class DetailController extends Controller
 {
-    public function uploadAvatar(Request $request) {
+    public function uploadAvatar(Request $request)
+    {
         if (!in_array($request->file('avatar')->extension(), ['png', 'jpg', 'gif']))
             return $this->response->errorBadRequest('目前只支持jpg, png, gif格式');
-        
+
         $user = auth()->user();
         $detail = $user->detail;
 
         $path = $request->file('avatar')->store('avatars', 'public');
-        
+
         $detail->update(['avatar' => Storage::url($path)]);
 
         return $this->response->array([
@@ -24,7 +25,8 @@ class DetailController extends Controller
         ]);
     }
 
-    public function update(Request $request) {
+    public function update(Request $request)
+    {
         $request->validate([
             'name' => 'required|string',
             'sex' => 'required|in:男,女,不明',
