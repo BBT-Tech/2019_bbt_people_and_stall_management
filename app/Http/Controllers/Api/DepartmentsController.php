@@ -7,11 +7,13 @@ use App\Models\Department;
 
 class DepartmentsController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         return $this->response->array(Department::all()->toArray());
     }
 
-    public function create(Request $request) {
+    public function create(Request $request)
+    {
         $request->validate([
             'name' => 'required|string',
             'intro' => 'required|max:255'
@@ -25,7 +27,8 @@ class DepartmentsController extends Controller
         return $this->response->array($department->toArray());
     }
 
-    public function update(Department $department, Request $request) {
+    public function update(Department $department, Request $request)
+    {
         $request->validate([
             'name' => 'required|string',
             'intro' => 'required|string|max:255'
@@ -38,7 +41,8 @@ class DepartmentsController extends Controller
         return $this->response->array($department->toArray());
     }
 
-    public function delete(Department $department) {
+    public function delete(Department $department)
+    {
         if (!$department->users->isEmpty()) {
             return $this->response->errorBadRequest('该部门尚有成员, 请删除后再执行操作');
         }

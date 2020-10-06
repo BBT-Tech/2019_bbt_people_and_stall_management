@@ -167,7 +167,7 @@ class UsersController extends Controller
             return $this->response->errorUnauthorized('权限不足');
         if ($current->group->level <= $user->group->level)
             return $this->response->errorUnauthorized('权限不足');
-        
+
         $user->schedules()->delete();
         $user->delete();
 

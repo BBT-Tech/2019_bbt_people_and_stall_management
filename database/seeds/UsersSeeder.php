@@ -19,20 +19,20 @@ class UsersSeeder extends Seeder
                 'department_id' => 1,
                 'email' => '1'
             ],
-            [
-                'sno' => '201730612383',
-                'password' => '$2y$10$h16N.bL3YqKRyXYyOOCvFO3xguM0ApMl4MozzTyA2kAgKUp2uoMq.',
-                'group_id' => 4,
-                'department_id' => 1,
-                'email' => '2'
-            ],
-            [
-                'sno' => '201830670313',
-                'password' => '$2y$10$h16N.bL3YqKRyXYyOOCvFO3xguM0ApMl4MozzTyA2kAgKUp2uoMq.',
-                'group_id' => 4,
-                'department_id' => 1,
-                'email' => '3'
-            ]
+            // [
+            //     'sno' => '201730612383',
+            //     'password' => '$2y$10$h16N.bL3YqKRyXYyOOCvFO3xguM0ApMl4MozzTyA2kAgKUp2uoMq.',
+            //     'group_id' => 4,
+            //     'department_id' => 1,
+            //     'email' => '2'
+            // ],
+            // [
+            //     'sno' => '201830670313',
+            //     'password' => '$2y$10$h16N.bL3YqKRyXYyOOCvFO3xguM0ApMl4MozzTyA2kAgKUp2uoMq.',
+            //     'group_id' => 4,
+            //     'department_id' => 1,
+            //     'email' => '3'
+            // ]
         ]);
     }
 }

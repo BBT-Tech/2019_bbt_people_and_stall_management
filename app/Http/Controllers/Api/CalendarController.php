@@ -7,7 +7,8 @@ use App\Models\Calendar;
 
 class CalendarController extends Controller
 {
-    public function newCalendar(Request $request) {
+    public function newCalendar(Request $request)
+    {
         Calendar::create([
             'year' => $request->year,
             'term' => $request->term,
@@ -16,12 +17,14 @@ class CalendarController extends Controller
         return $this->response->noContent();
     }
 
-    public function deleteCalendar($year, $term) {
+    public function deleteCalendar($year, $term)
+    {
         Calendar::where(['year' => $year, 'term' => $term])->delete();
         return $this->response->noContent();
     }
 
-    public function updateCalendar($year, $term, Request $request) {
+    public function updateCalendar($year, $term, Request $request)
+    {
         Calendar::where(['year' => $year, 'term' => $term])->first()
             ->update([
                 'date' => $request->date,
@@ -29,9 +32,10 @@ class CalendarController extends Controller
         return $this->response->noContent();
     }
 
-    public function showCalendar($year=0,$term=0) {
-        if ($year && $term) $calendars=Calendar::where('year',$year)->where('term',$term)->get();
-        else $calendars=Calendar::all();
+    public function showCalendar($year = 0, $term = 0)
+    {
+        if ($year && $term) $calendars = Calendar::where('year', $year)->where('term', $term)->get();
+        else $calendars = Calendar::all();
         return $this->response->array($calendars->toArray());
     }
 }

@@ -8,11 +8,13 @@ use Spatie\Permission\Models\Role;
 
 class GroupsController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         return $this->response->array(Group::all()->toArray());
     }
 
-    public function create(Request $request) {
+    public function create(Request $request)
+    {
         $request->validate([
             'name' => 'required|string',
             'intro' => 'string',
@@ -30,7 +32,8 @@ class GroupsController extends Controller
         return $this->response->array($group->toArray());
     }
 
-    public function update(Group $group, Request $request) {
+    public function update(Group $group, Request $request)
+    {
         $request->validate([
             'name' => 'required|string',
             'intro' => 'string',
@@ -45,10 +48,11 @@ class GroupsController extends Controller
         return $this->response->array($group->toArray());
     }
 
-    public function delete(Group $group) {
+    public function delete(Group $group)
+    {
         if (!$group->users->isEmpty())
             return $this->response->errorBadRequest('存在该管理层成员, 请先删除或转移');
-        
+
         $group->delete();
 
         return $this->response->noContent();

@@ -7,7 +7,8 @@ use App\Models\College;
 
 class CollegesController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         return $this->response->array(College::all()->toArray());
     }
 }

@@ -20,22 +20,22 @@ class DetailsSeeder extends Seeder
                 'birth' => '2019-01-01',
                 'mobile' => '13600000000'
             ],
-            [
-                'user_id' => 2,
-                'name' => 'cbf',
-                'sex' => '男',
-                'avatar' => '/storage/avatars/2.jpg',
-                'birth' => '1998-02-18',
-                'mobile' => '15521236000'
-            ],
-            [
-                'user_id' => 3,
-                'name' => 'lzk',
-                'sex' => '男',
-                'avatar' => '/storage/avatars/2.jpg',
-                'birth' => '2000-06-08',
-                'mobile' => '18520775522'
-            ],
+            // [
+            //     'user_id' => 2,
+            //     'name' => 'cbf',
+            //     'sex' => '男',
+            //     'avatar' => '/storage/avatars/2.jpg',
+            //     'birth' => '1998-02-18',
+            //     'mobile' => '15521236000'
+            // ],
+            // [
+            //     'user_id' => 3,
+            //     'name' => 'lzk',
+            //     'sex' => '男',
+            //     'avatar' => '/storage/avatars/2.jpg',
+            //     'birth' => '2000-06-08',
+            //     'mobile' => '18520775522'
+            // ],
         ]);
     }
 }
