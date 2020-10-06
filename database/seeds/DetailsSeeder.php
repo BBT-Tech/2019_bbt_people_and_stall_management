@@ -27,7 +27,15 @@ class DetailsSeeder extends Seeder
                 'avatar' => '/storage/avatars/2.jpg',
                 'birth' => '1998-02-18',
                 'mobile' => '15521236000'
-            ]
+            ],
+            [
+                'user_id' => 3,
+                'name' => 'lzk',
+                'sex' => '男',
+                'avatar' => '/storage/avatars/2.jpg',
+                'birth' => '2000-06-08',
+                'mobile' => '18520775522'
+            ],
         ]);
     }
 }
