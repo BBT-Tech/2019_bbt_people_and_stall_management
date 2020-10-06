@@ -3562,16 +3562,16 @@
         },
         {
             "name": "rap2hpoutre/fast-excel",
-            "version": "v1.3.1",
+            "version": "v1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rap2hpoutre/fast-excel.git",
-                "reference": "d45e1c3cc8ad4becf5b0e764c412e802459941a7"
+                "reference": "be62e7e8279d0877592a6f7190e1fcb81295909b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rap2hpoutre/fast-excel/zipball/d45e1c3cc8ad4becf5b0e764c412e802459941a7",
-                "reference": "d45e1c3cc8ad4becf5b0e764c412e802459941a7",
+                "url": "https://api.github.com/repos/rap2hpoutre/fast-excel/zipball/be62e7e8279d0877592a6f7190e1fcb81295909b",
+                "reference": "be62e7e8279d0877592a6f7190e1fcb81295909b",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -3582,11 +3582,11 @@
             },
             "require": {
                 "box/spout": "^2.7",
-                "illuminate/database": "5.3.* || 5.4.* || 5.5.* || 5.6.* || 5.7.* || 5.8.* || ^6.0",
-                "illuminate/support": "5.3.* || 5.4.* || 5.5.* || 5.6.* || 5.7.* || 5.8.* || ^6.0",
+                "illuminate/support": "5.3.* || 5.4.* || 5.5.* || 5.6.* || 5.7.* || 5.8.* || ^6.0 || ^7.0",
                 "php": "^7.0"
             },
             "require-dev": {
+                "illuminate/database": "5.3.* || 5.4.* || 5.5.* || 5.6.* || 5.7.* || 5.8.* || ^6.0 || ^7.0",
                 "phpunit/phpunit": "^6.4"
             },
             "type": "library",
@@ -3623,7 +3623,7 @@
                 "xls",
                 "xlsx"
             ],
-            "time": "2019-09-04T09:45:32+00:00"
+            "time": "2020-02-20T11:02:08+00:00"
         },
         {
             "name": "spatie/laravel-permission",
@@ -5941,16 +5941,16 @@
         },
         {
             "name": "symfony/translation-contracts",
-            "version": "v2.2.0",
+            "version": "v2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation-contracts.git",
-                "reference": "77ce1c3627c9f39643acd9af086631f842c50c4d"
+                "reference": "e2eaa60b558f26a4b0354e1bbb25636efaaad105"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation-contracts/zipball/77ce1c3627c9f39643acd9af086631f842c50c4d",
-                "reference": "77ce1c3627c9f39643acd9af086631f842c50c4d",
+                "url": "https://api.github.com/repos/symfony/translation-contracts/zipball/e2eaa60b558f26a4b0354e1bbb25636efaaad105",
+                "reference": "e2eaa60b558f26a4b0354e1bbb25636efaaad105",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -5968,7 +5968,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.2-dev"
+                    "dev-master": "2.3-dev"
                 },
                 "thanks": {
                     "name": "symfony/contracts",
@@ -6018,7 +6018,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-09-07T11:33:47+00:00"
+            "time": "2020-09-28T13:05:58+00:00"
         },
         {
             "name": "symfony/var-dumper",

@@ -40,6 +40,10 @@ class DepartmentsSeeder extends Seeder
                 'name' => '视觉设计部',
                 'introduction' => ''
             ],
+            [
+                'name' => '常委',
+                'introduction' => ''
+            ],
             // [
             //     'name' => '视频部',
             //     'introduction' => '用DV看世界，用影像记录一切。华工最前沿的新闻记者，最专业的视频制作团队，这里追踪时事热点，这里记录校园生活。“关注华工生活，反映同学心声”是我们永远的宗旨。只要你有热情，只要你有想法，只要你有理想，用小小视频拍出大大世界~~百步梯视频部，用DV来FUN转你的视界'
