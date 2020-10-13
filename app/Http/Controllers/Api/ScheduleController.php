@@ -96,7 +96,7 @@ class ScheduleController extends Controller
     {
         $users = User::with([
             'detail' => function ($q) {
-                $q->select(['user_id', 'name', 'sex', 'mobile']);
+                $q->select(['user_id', 'name', 'sex', 'mobile', 'campus']);
             },
             'department',
             'group'
